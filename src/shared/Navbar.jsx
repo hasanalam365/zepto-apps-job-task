@@ -59,7 +59,8 @@ const Navbar = () => {
             </div>
 
           
-            <div
+            {
+                isNavOpen &&  <div
                 className={`bg-gray-300 absolute top-0 w-full p-4  h-screen animate__animated ${isNavOpen ? 'animate__fadeInRight' : 'animate__fadeOutRight'}`}
               
             >
@@ -68,6 +69,7 @@ const Navbar = () => {
                 </button>
                 <ul className='space-y-1 text-lg font-medium'>{navLinks}</ul>
             </div>
+           }
         </div>
     );
 };
