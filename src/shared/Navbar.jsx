@@ -32,7 +32,7 @@ const Navbar = () => {
     );
 
     return (
-        <div>
+        <div className='bg-gray-100 shadow-lg'>
             <div className='flex items-center justify-between'>
                 <div>
                     <button className='btn btn-ghost'>
