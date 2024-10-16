@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
+import Book from './Book';
 
-const Cards = () => {
+const Books = () => {
 
     const [books,setBooks]=useState([])
 
@@ -16,10 +16,10 @@ const Cards = () => {
     return (
         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
             {
-                books?.map(book=> <Card key={book.id} book={book}></Card> )
+                books?.map(book=> <Book key={book.id} book={book}></Book> )
           }
         </div>
     );
 };
 
-export default Cards;
+export default Books;
