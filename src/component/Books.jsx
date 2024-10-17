@@ -45,7 +45,7 @@ const Books = () => {
             {
                 currentBooks.length === 0 ? <div className='flex items-center justify-center h-screen'>
                       <FallingLines
-                        color="#4fa94d"
+                        color="blue"
                         width="100"
                          visible={true}
                          ariaLabel="falling-circles-loading"
