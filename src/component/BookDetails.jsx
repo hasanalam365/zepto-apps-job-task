@@ -9,13 +9,13 @@ const BookDetails = () => {
     console.log(BookData)
 
     return (
-        <div className='flex gap-8 mt-8'>
-            <div className='w-[40%]'>
+        <div className='flex flex-col md:flex-row lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6'>
+            <div className='w-full md:w-full lg:w-1/2'>
                  {BookData.formats["image/jpeg"] && (
                         <img 
                             src={BookData.formats["image/jpeg"]} 
                             alt={BookData.title} 
-                            className='w-full h-[500px] mb-4 rounded-xl' 
+                            className='w-full h-[450px] mb-4 rounded-xl' 
                         />
                     )}
           </div>
