@@ -8,16 +8,12 @@ const Navbar = () => {
 
     const navLinks = (
         <>
-            <li onClick={() => setIsNavOpen(!isNavOpen)}>
+            <li onClick={() => setIsNavOpen(false)}>
                 <NavLink to="/">
                     Home
                 </NavLink>
             </li>
-            <li>
-                <NavLink>
-                    Books
-                </NavLink>
-            </li>
+           
             <li>
                 <NavLink>
                     Contact
@@ -32,7 +28,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className='bg-gray-100 shadow-lg'>
+        <div className='bg-gray-100 shadow-lg px-6'>
             <div className='flex items-center justify-between'>
                 <div>
                     <Link to="/">

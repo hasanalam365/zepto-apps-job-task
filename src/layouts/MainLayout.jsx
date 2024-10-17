@@ -4,10 +4,13 @@ import Navbar from '../shared/Navbar';
 
 const MainLayout = () => {
     return (
-        <div className='container mx-auto'>
-            <Navbar></Navbar>
+        <div>
+              <Navbar></Navbar>
+              <div className='container mx-auto'>
+          
             <Outlet></Outlet>
         </div>
+      </div>
     );
 };
 
