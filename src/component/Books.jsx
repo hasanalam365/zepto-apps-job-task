@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Book from './Book';
+import { FallingLines } from 'react-loader-spinner';
 
 const Books = () => {
     const [books, setBooks] = useState([]);
@@ -41,7 +42,16 @@ const Books = () => {
 
     return (
         <div>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
+            {
+                currentBooks.length === 0 ? <div className='flex items-center justify-center h-screen'>
+                      <FallingLines
+                        color="#4fa94d"
+                        width="100"
+                         visible={true}
+                         ariaLabel="falling-circles-loading"
+                     />
+                </div> : <div>
+                     <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8'>
                 {currentBooks.map((book) => (
                     <Book key={book.id} book={book}></Book>
                 ))}
@@ -68,6 +78,8 @@ const Books = () => {
                     Next
                 </button>
             </div>
+                </div>
+           }
         </div>
     );
 };
