@@ -11,7 +11,7 @@ const Search_Filter = ({ setSearch, setCategory }) => {
     };
 
     return (
-       <div className="flex justify-center items-center bg-gray-100 py-4">
+       <div className="flex justify-center items-center bg-gray-100 py-4  z-10">
             <div className="flex items-center p-2 bg-white rounded-lg max-w-md w-full">
                 <input 
                     onChange={e => setSearchTerm(e.target.value)}
@@ -31,7 +31,7 @@ const Search_Filter = ({ setSearch, setCategory }) => {
             <div className="ml-4 relative">
                 <select 
                     onChange={e => setSelectedCategory(e.target.value)}
-                    className="dropdown py-3 px-4 pr-10 rounded-lg border border-gray-300 bg-white focus:border-blue-400 focus:outline-none appearance-none"
+                    className=" py-3 px-4 pr-10 rounded-lg border border-gray-300 bg-white focus:border-blue-400 focus:outline-none appearance-none"
                     name="category" 
                     id="category"
                 >

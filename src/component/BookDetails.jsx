@@ -6,7 +6,7 @@ import { useLoaderData } from 'react-router-dom';
 const BookDetails = () => {
     const BookData=useLoaderData()
     
-    console.log(BookData)
+
 
     return (
         <div className='flex flex-col md:flex-row lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6'>

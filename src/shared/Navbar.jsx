@@ -28,7 +28,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className='bg-gray-100 shadow-lg px-6'>
+        <div className='bg-gray-100 shadow-lg md:px-6 relative z-50'>
             <div className='flex items-center justify-between'>
                 <div>
                     <Link to="/">
