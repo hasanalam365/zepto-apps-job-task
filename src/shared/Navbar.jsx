@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BsMenuAppFill, BsMenuButtonWideFill } from 'react-icons/bs';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import 'animate.css';
 
 const Navbar = () => {
@@ -8,8 +8,8 @@ const Navbar = () => {
 
     const navLinks = (
         <>
-            <li>
-                <NavLink>
+            <li onClick={() => setIsNavOpen(!isNavOpen)}>
+                <NavLink to="/">
                     Home
                 </NavLink>
             </li>
@@ -35,9 +35,9 @@ const Navbar = () => {
         <div className='bg-gray-100 shadow-lg'>
             <div className='flex items-center justify-between'>
                 <div>
-                    <button className='btn btn-ghost'>
+                    <Link to="/">
                         <img src="/full-logo-bg.png" alt="logo" className='w-[200px] md:w-[250px] md:h-[60px] lg:w-[250px] lg:h-[60px]' />
-                    </button>
+                    </Link>
                 </div>
                 <div>
                     {/* Small device */}
