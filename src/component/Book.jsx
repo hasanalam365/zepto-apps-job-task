@@ -3,9 +3,9 @@ import { FaDownload, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Book = ({ book }) => {
-    console.log(book);
+   
     return (
-        <Link to={`/book/${book.id}`} className='shadow-lg p-4 rounded-xl'>
+        <Link to={`/books/${book.id}`} className='shadow-lg p-4 rounded-xl'>
             <div className='flex flex-col justify-between'>
                 <div>
                     {book.formats["image/jpeg"] && (
