@@ -21,11 +21,11 @@ const WishLists = () => {
 
 
     return (
-        <div>
-            <div className='shadow-lg p-4 rounded-xl'>
+       <div>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 '>
                 {
                     wishBooks.map(wishBook => 
-                         <div key={wishBook.id} className='flex flex-col justify-between'>
+                         <div key={wishBook.id} className='flex flex-col justify-between shadow-lg p-4 rounded-xl'>
                 <div>
                     {wishBook.formats["image/jpeg"] && (
                         <img 
