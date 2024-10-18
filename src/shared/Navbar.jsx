@@ -13,13 +13,18 @@ const Navbar = () => {
                     Home
                 </NavLink>
             </li>
+            <li onClick={() => setIsNavOpen(false)}>
+                <NavLink to="/wishlists">
+                  WishLists
+                </NavLink>
+            </li>
            
-            <li>
+            <li  onClick={() => setIsNavOpen(false)}>
                 <NavLink>
                     Contact
                 </NavLink>
             </li>
-            <li>
+            <li  onClick={() => setIsNavOpen(false)}>
                 <NavLink>
                     About Us
                 </NavLink>

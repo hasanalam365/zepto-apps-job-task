@@ -1,12 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaDownload, FaRegHeart } from 'react-icons/fa';
 import { LuLanguages } from 'react-icons/lu';
 import { useLoaderData } from 'react-router-dom';
 
 const BookDetails = () => {
     const BookData=useLoaderData()
-    
+    const [wishLists,setWishLists]=useState([])
 
+
+     useEffect(() => {
+        const storedWishlists = JSON.parse(localStorage.getItem('bookLists')) || [];
+        setWishLists(storedWishlists);
+    }, []);
+
+const handleWishlist = (book) => {
+        const isBookWishlist=wishLists.some(wishBook=>wishBook.id=== book.id)
+
+    if (!isBookWishlist) {
+            const updatedWishLists=[...wishLists,book]
+        setWishLists(updatedWishLists)
+          localStorage.setItem('bookLists', JSON.stringify(updatedWishLists)); 
+        }
+       
+    }
 
     return (
         <div className='flex flex-col md:flex-row lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6'>
@@ -38,9 +54,10 @@ const BookDetails = () => {
                     |
                     <p className='flex items-center  gap-3'>  <FaDownload /> {BookData.download_count}</p>
                     |
-                     <FaRegHeart />
+                     <FaRegHeart onClick={()=>handleWishlist(BookData)}/>
                 </div>
-          </div>
+            </div>
+            
         </div>
     );
 };

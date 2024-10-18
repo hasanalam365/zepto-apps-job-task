@@ -1,11 +1,13 @@
 import React from 'react';
 import Books from '../../component/Books';
 
+
 const Home = () => {
     return (
         <div>
            
-           <Books/>
+            <Books />
+          
         </div>
     );
 };

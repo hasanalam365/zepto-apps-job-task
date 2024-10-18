@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
 import BookDetails from "../component/BookDetails";
 import ErrorElement from "../pages/ErrorElement/ErrorElement";
+import WishLists from "../pages/WishLists/WishLists";
 
 export const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ export const router = createBrowserRouter([
         element: <BookDetails />,
         loader: ({params})=>fetch(`https://gutendex.com/books/${params.id}`)
       },
+      {
+        path: '/wishlists',
+        element: <WishLists/>
+      }
     ]
   },
 ]);
