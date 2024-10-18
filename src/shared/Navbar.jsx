@@ -9,22 +9,22 @@ const Navbar = () => {
     const navLinks = (
         <>
             <li onClick={() => setIsNavOpen(false)}>
-                <NavLink to="/">
+                <NavLink to="/" className={({isActive})=> isActive ? 'text-orange-600' : ''}>
                     Home
                 </NavLink>
             </li>
             <li onClick={() => setIsNavOpen(false)}>
-                <NavLink to="/wishlists">
+                <NavLink to="/wishlists" className={({isActive})=> isActive ? 'text-orange-600' : ''}>
                   WishLists
                 </NavLink>
             </li>
            
-            <li  onClick={() => setIsNavOpen(false)}>
+            <li  onClick={() => setIsNavOpen(false)} className={({isActive})=> isActive ? 'text-orange-600' : ''}>
                 <NavLink>
                     Contact
                 </NavLink>
             </li>
-            <li  onClick={() => setIsNavOpen(false)}>
+            <li  onClick={() => setIsNavOpen(false)} className={({isActive})=> isActive ? 'text-orange-600' : ''}>
                 <NavLink>
                     About Us
                 </NavLink>
