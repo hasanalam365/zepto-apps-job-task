@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaDownload, FaRegHeart } from 'react-icons/fa';
+import { FaDownload, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const WishLists = () => {
@@ -17,7 +17,15 @@ const WishLists = () => {
 
     },[])
 
+    const handleRemoveWish = (id) => {
+    
+        const updatedWishBooks = wishBooks.filter(book => book.id !== id)
+        
 
+       setWishBooks(updatedWishBooks)
+        localStorage.setItem('bookLists', JSON.stringify(updatedWishBooks))
+        alert('Removed Successfully')
+}
 
 
     return (
@@ -48,7 +56,8 @@ const WishLists = () => {
                     <p className='flex items-center gap-3'>
                         <FaDownload /> {wishBook.download_count}
                     </p>
-                    <FaRegHeart />
+                              
+                                <FaHeart onClick={()=>handleRemoveWish(wishBook.id)} className='text-red-600'/>
                 </div>
                 <Link to={`/books/${wishBook.id}`} >
                    <button className='bg-orange-600 text-white p-2 rounded-lg mt-2'> See details</button>
