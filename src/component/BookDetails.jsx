@@ -20,7 +20,8 @@ const handleWishlist = (book) => {
             const updatedWishLists=[...wishLists,book]
         setWishLists(updatedWishLists)
           localStorage.setItem('bookLists', JSON.stringify(updatedWishLists)); 
-        }
+    }
+    alert('Added Wishlist')
        
     }
 

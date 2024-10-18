@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { FaDownload, FaRegHeart } from 'react-icons/fa';
+import { FaDownload, FaHeart, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Book = ({ book }) => {
+
+    const [isWishlist,setIsWishlist]=useState(false)
+
+    useEffect(() => {
+        const storedWishlist=JSON.parse(localStorage.getItem('bookLists')) || []
+        const isBookWishlist=storedWishlist.some(wishBook=>wishBook.id === book.id)
+        setIsWishlist(isBookWishlist)
+    },[book.id])
+
 
     return (
         <div className='shadow-lg p-4 rounded-xl'>
@@ -30,7 +39,11 @@ const Book = ({ book }) => {
                     <p className='flex items-center gap-3'>
                         <FaDownload /> {book.download_count}
                     </p>
-                    <FaRegHeart />
+                    {isWishlist ? (
+                        <FaHeart className="text-red-600" />
+                    ) : (
+                        <FaRegHeart />
+                    )}
                 </div>
                 <Link to={`/books/${book.id}`} >
                    <button className='bg-orange-600 text-white p-2 rounded-lg mt-2'> See details</button>
