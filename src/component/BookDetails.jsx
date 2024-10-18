@@ -13,6 +13,7 @@ const BookDetails = () => {
         setWishLists(storedWishlists);
     }, []);
 
+    
 const handleWishlist = (book) => {
         const isBookWishlist=wishLists.some(wishBook=>wishBook.id=== book.id)
 
@@ -31,7 +32,7 @@ const handleWishlist = (book) => {
         const storedWishlist=JSON.parse(localStorage.getItem('bookLists')) || []
         const isBookWishlist=storedWishlist.some(wishBook=>wishBook.id === BookData.id)
         setIsCheckWishlist(isBookWishlist)
-    },[BookData.id])
+    },[BookData.id,wishLists])
 
     
 

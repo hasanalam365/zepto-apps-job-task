@@ -13,6 +13,7 @@ const Book = ({ book }) => {
         setIsWishlist(isBookWishlist)
     },[book.id])
 
+    
 
     return (
         <div className='shadow-lg p-4 rounded-xl'>
