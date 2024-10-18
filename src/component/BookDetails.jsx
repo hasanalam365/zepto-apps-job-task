@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { FaDownload, FaRegHeart } from 'react-icons/fa';
+import { FaDownload, FaHeart, FaRegHeart } from 'react-icons/fa';
 import { LuLanguages } from 'react-icons/lu';
 import { useLoaderData } from 'react-router-dom';
 
 const BookDetails = () => {
     const BookData=useLoaderData()
     const [wishLists,setWishLists]=useState([])
-
+ const [isCheckWishlist,setIsCheckWishlist]=useState(false)
 
      useEffect(() => {
         const storedWishlists = JSON.parse(localStorage.getItem('bookLists')) || [];
@@ -24,6 +24,16 @@ const handleWishlist = (book) => {
     alert('Added Wishlist')
        
     }
+
+    
+
+    useEffect(() => {
+        const storedWishlist=JSON.parse(localStorage.getItem('bookLists')) || []
+        const isBookWishlist=storedWishlist.some(wishBook=>wishBook.id === BookData.id)
+        setIsCheckWishlist(isBookWishlist)
+    },[BookData.id])
+
+    
 
     return (
         <div className='flex flex-col md:flex-row lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6'>
@@ -55,7 +65,12 @@ const handleWishlist = (book) => {
                     |
                     <p className='flex items-center  gap-3'>  <FaDownload /> {BookData.download_count}</p>
                     |
-                     <FaRegHeart onClick={()=>handleWishlist(BookData)}/>
+                    {/* <FaRegHeart onClick={() => handleWishlist(BookData)} /> */}
+                      {isCheckWishlist ? (
+                        <FaHeart className="text-red-600" />
+                    ) : (
+                        <FaRegHeart onClick={() => handleWishlist(BookData)}/>
+                    )}
                 </div>
             </div>
             
