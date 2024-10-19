@@ -14,7 +14,7 @@ const Footer = () => {
                 <img src="/full-logo-bg.png" alt="" className='w-[200px] h-[100px]'/>
             </div>
             <div className='flex items-center justify-center'>
-                 <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
+                 <p className='flex items-center justify-center'>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
  
             </div>
         </div>

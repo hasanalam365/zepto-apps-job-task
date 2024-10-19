@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaDownload, FaHeart, FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const Book = ({ book }) => {
 
@@ -41,8 +45,8 @@ const Book = ({ book }) => {
     }
 
 
-    return (
-        <div className='shadow-lg p-4 rounded-xl'>
+    return ( 
+        <div data-aos="fade-up" data-aos-delay="50" className='shadow-lg p-4 rounded-xl'>
             <div className='flex flex-col justify-between'>
                 <div>
                     {book.formats["image/jpeg"] && (

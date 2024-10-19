@@ -68,7 +68,7 @@ const Books = () => {
                         </div>
 
                         {/* Pagination controls */}
-                        <div className="flex justify-center mt-8">
+                        <div className="flex justify-center mt-8 mb-8">
                             <button
                                 onClick={() => paginate(currentPage - 1)}
                                 disabled={currentPage === 1}
