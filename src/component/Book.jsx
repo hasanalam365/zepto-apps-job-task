@@ -32,6 +32,14 @@ const Book = ({ book }) => {
         
     }
     
+    const handleRemoveWishlist = (id) => {
+        const isCheckWishlists=JSON.parse(localStorage.getItem('bookLists')) ||[]
+        const updatedWishlists= isCheckWishlists.filter(check=>check.id!== id)
+        setWishlists(updatedWishlists)
+        localStorage.setItem('bookLists',JSON.stringify(updatedWishlists))
+        alert('Removed Succesfully')
+    }
+
 
     return (
         <div className='shadow-lg p-4 rounded-xl'>
@@ -59,7 +67,7 @@ const Book = ({ book }) => {
                         <FaDownload /> {book.download_count}
                     </p>
                     {isWishlist ? (
-                        <FaHeart className="text-red-600" />
+                        <FaHeart className="text-red-600" onClick={()=>handleRemoveWishlist(book.id)}/>
                     ) : (
                         <FaRegHeart  onClick={()=>handleAddWishlist(book)}/>
                     )}
