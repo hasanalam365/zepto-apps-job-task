@@ -30,7 +30,10 @@ const WishLists = () => {
 
     return (
        <div>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 '>
+            {
+                wishBooks.length === 0 ? <p className='flex items-center justify-center py-[10%]'>Wishlists is Empty!! </p>
+                    :
+                      <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 '>
                 {
                     wishBooks.map(wishBook => 
                          <div key={wishBook.id} className='flex flex-col justify-between shadow-lg p-4 rounded-xl'>
@@ -66,6 +69,7 @@ const WishLists = () => {
                     )
            }
         </div>
+          }
         </div>
     );
 };
