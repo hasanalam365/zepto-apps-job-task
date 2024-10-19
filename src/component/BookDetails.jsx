@@ -35,6 +35,19 @@ const handleWishlist = (book) => {
     },[BookData.id,wishLists])
 
     
+    const handleRemoveWishlist = (id) => {
+       
+        
+        const isCheckWishlists=JSON.parse(localStorage.getItem('bookLists')) || []
+const updatedWishLists=isCheckWishlists.filter(check=> check.id !== id)
+      
+        
+         setWishLists(updatedWishLists)
+        localStorage.setItem('bookLists', JSON.stringify(updatedWishLists))
+        alert('Removed Successfully')
+
+}
+
 
     return (
         <div className='flex flex-col md:flex-row lg:flex-row gap-3 md:gap-6 lg:gap-6 p-6'>
@@ -68,7 +81,7 @@ const handleWishlist = (book) => {
                     |
                     {/* <FaRegHeart onClick={() => handleWishlist(BookData)} /> */}
                       {isCheckWishlist ? (
-                        <FaHeart className="text-red-600" />
+                        <FaHeart className="text-red-600" onClick={()=>handleRemoveWishlist(BookData.id)}/>
                     ) : (
                         <FaRegHeart onClick={() => handleWishlist(BookData)}/>
                     )}
