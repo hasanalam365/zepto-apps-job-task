@@ -5,14 +5,32 @@ import { Link } from 'react-router-dom';
 
 const Book = ({ book }) => {
 
-    const [isWishlist,setIsWishlist]=useState(false)
+    const [isWishlist, setIsWishlist] = useState(false)
+    const [wishlists,setWishlists]=useState([])
 
     useEffect(() => {
         const storedWishlist=JSON.parse(localStorage.getItem('bookLists')) || []
         const isBookWishlist=storedWishlist.some(wishBook=>wishBook.id === book.id)
         setIsWishlist(isBookWishlist)
-    },[book.id])
+    },[book.id,wishlists])
 
+
+    const handleAddWishlist = (book) => {
+
+        const isBookCheck= wishlists.some(wish=>wish.id===book.id)
+
+        if (!isBookCheck) {
+            const updatedWishlist=[...wishlists,book]
+            setWishlists(updatedWishlist)
+            localStorage.setItem('bookLists',JSON.stringify(updatedWishlist))
+        }
+
+       alert('Added Wishlist')
+        
+        
+     
+        
+    }
     
 
     return (
@@ -43,7 +61,7 @@ const Book = ({ book }) => {
                     {isWishlist ? (
                         <FaHeart className="text-red-600" />
                     ) : (
-                        <FaRegHeart />
+                        <FaRegHeart  onClick={()=>handleAddWishlist(book)}/>
                     )}
                 </div>
                 <Link to={`/books/${book.id}`} >
