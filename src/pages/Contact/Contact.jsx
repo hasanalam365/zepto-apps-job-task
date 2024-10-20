@@ -4,8 +4,8 @@ import { MdEmail } from 'react-icons/md';
 
 const Contact = () => {
     return (
-        <div className='bg-[#CAE7E5] p-8 flex  justify-center'>
-            <div className='w-[30%] border-r-2 border-r-gray-400 flex items-center justify-center flex-col space-y-3'>
+        <div className='bg-[#CAE7E5] p-3 md:p-8 lg:p-8 flex flex-col md:flex-row lg:flex-row justify-center'>
+            <div className='w-full md:w-[30%] lg:w-[30%] md:border-r-2 md:border-r-gray-400 flex items-center justify-center flex-col space-y-3'>
                 <div className='flex flex-col items-center justify-center'>
                     <FaLocationDot className='text-[#3B1C91] text-2xl'/>
                     <h5 className='font-medium'>Address</h5>
@@ -24,7 +24,7 @@ const Contact = () => {
                      <p>zeptoapps@gmail.com</p>
                </div>
            </div>
-            <form className='w-[70%] pl-8 space-y-3'>
+            <form className='md:w-[70%] p-4 lg:w-[70%] md:pl-8 lg:pl-8 space-y-3 '>
                <h5 className='text-[#3B1C91] text-2xl font-medium'>Send us a message</h5> 
                <p>If you have any work from us , you can send us message from here . It's Our pleasure to help you</p>
                 <div className='flex flex-col space-y-3'>
