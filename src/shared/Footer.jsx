@@ -7,8 +7,8 @@ const Footer = () => {
             <nav className='flex items-center justify-center gap-5'>
                <Link to="/">Home</Link>
                <Link to="/wishlists" >Wishlists</Link>
+               <Link to="/contact">Contacts</Link>
                <Link >About Us</Link>
-               <Link>Contacts</Link>
             </nav>
             <div className='flex items-center justify-center'>
                 <img src="/full-logo-bg.png" alt="" className='w-[200px] h-[100px]'/>

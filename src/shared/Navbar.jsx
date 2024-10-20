@@ -20,7 +20,7 @@ const Navbar = () => {
             </li>
            
             <li  onClick={() => setIsNavOpen(false)} className={({isActive})=> isActive ? 'text-orange-600' : ''}>
-                <NavLink>
+                <NavLink to="/contact">
                     Contact
                 </NavLink>
             </li>
