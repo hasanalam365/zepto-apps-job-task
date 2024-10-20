@@ -39,7 +39,7 @@ const handleWishlist = (book) => {
        
         
         const isCheckWishlists=JSON.parse(localStorage.getItem('bookLists')) || []
-const updatedWishLists=isCheckWishlists.filter(check=> check.id !== id)
+        const updatedWishLists=isCheckWishlists.filter(check=> check.id !== id)
       
         
          setWishLists(updatedWishLists)

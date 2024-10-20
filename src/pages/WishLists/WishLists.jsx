@@ -29,7 +29,7 @@ const WishLists = () => {
 
 
     return (
-       <div>
+        <div className='my-5'>
             {
                 wishBooks.length === 0 ? <p className='flex items-center justify-center py-[10%]'>Wishlists is Empty!! </p>
                     :
